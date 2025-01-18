@@ -5,8 +5,8 @@ import 'package:illum/map/map.dart';
 import 'package:illum/ui/customedButton.dart';
 import 'package:illum/ui/list.dart';
 import 'package:illum/ui/smallbutton.dart';
-import 'package:illum/ui/tag.dart';
 import 'package:illum/ui/whiteSizedBox.dart';
+import 'package:illum/ui/bottomsheet.dart' as bottom;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,10 +70,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MapPage()));
                 }),
-            const TagBox(
-              tag: '편의점',
-              onTap: null,
-            ),
+            CustomedButton(
+                text: 'bottomsheet',
+                buttonColor: Colors.orange,
+                textColor: Colors.white,
+                onTap: () {
+                  final bottomSheet = bottom.Bottomsheet();
+                  bottomSheet.selectBottomSheet(6, context);
+                }),
             OutlinedButton(
                 onPressed: () {
                   Navigator.push(context,

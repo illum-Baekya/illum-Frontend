@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class TagBox extends StatelessWidget {
   final String tag;
   final VoidCallback? onTap;
+  final Color color;
 
-  const TagBox({super.key, required this.tag, required this.onTap});
+  const TagBox(
+      {super.key, required this.color, required this.tag, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class TagBox extends StatelessWidget {
       child: IntrinsicWidth(
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: color,
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.black),
           ),
