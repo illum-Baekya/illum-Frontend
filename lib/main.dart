@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_naver_map/flutter_naver_map.dart';
+import 'package:illum/landing/search.dart';
 import 'package:illum/map/map.dart';
 
 void main() async {
@@ -49,6 +50,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MapPage()));
+                },
+                child: Text("Go to Map")),
+            OutlinedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => searchPage()));
                 },
                 child: Text("Go to Map")),
           ],
