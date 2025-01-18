@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_naver_map/flutter_naver_map.dart';
 import 'package:illum/landing/search.dart';
 import 'package:illum/map/map.dart';
+import 'package:illum/ui/customedButton.dart';
+import 'package:illum/ui/list.dart';
+import 'package:illum/ui/smallbutton.dart';
+import 'package:illum/ui/tag.dart';
+import 'package:illum/ui/whiteSizedBox.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 255, 215, 154),
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
@@ -46,18 +52,35 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            OutlinedButton(
-                onPressed: () {
+            ListButton(
+              address: '서울특별시 동작구 노량진동',
+              percent: '98%',
+              onTap: null,
+            ),
+            SmallButton(
+                text: '유동인구',
+                buttonColor: Colors.white,
+                textColor: Colors.orange),
+            SizedBox(height: 10),
+            CustomedButton(
+                text: '지도',
+                buttonColor: Colors.orange,
+                textColor: Colors.white,
+                onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MapPage()));
-                },
-                child: Text("Go to Map")),
+                }),
+            const TagBox(
+              tag: '편의점',
+              onTap: null,
+            ),
             OutlinedButton(
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => searchPage()));
                 },
                 child: Text("Go to Map")),
+            ManageSizedBox(content: null, boxHeight: 500)
           ],
         ),
       ),

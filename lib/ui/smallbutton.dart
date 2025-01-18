@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomedButton extends StatelessWidget {
+class SmallButton extends StatelessWidget {
   final String text;
   final Color buttonColor;
   final Color textColor;
   final VoidCallback? onTap; // Add onTap callback
 
-  const CustomedButton({
+  const SmallButton({
     super.key,
     required this.text,
     required this.buttonColor,
@@ -19,11 +19,12 @@ class CustomedButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap, // Assign the onTap callback
       child: Container(
-        width: 320,
-        height: 60,
+        width: 100,
+        height: 35,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(7),
+          borderRadius: BorderRadius.circular(10),
           color: buttonColor,
+          border: Border.all(color: const Color.fromARGB(255, 202, 202, 202)),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -33,7 +34,7 @@ class CustomedButton extends StatelessWidget {
               style: TextStyle(
                 color: textColor,
                 fontWeight: FontWeight.w600,
-                fontSize: 18,
+                fontSize: 12,
               ),
             ),
           ),
