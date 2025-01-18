@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_naver_map/flutter_naver_map.dart';
-import 'package:illum/landing/search.dart';
+import 'package:illum/landing/detail.dart';
+import 'package:illum/landing/movingpp.dart';
 import 'package:illum/map/map.dart';
 import 'package:illum/ui/customedButton.dart';
 import 'package:illum/ui/list.dart';
@@ -81,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             OutlinedButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => searchPage()));
+                      MaterialPageRoute(builder: (context) => MapPage()));
                 },
                 child: Text("Go to Map")),
             ManageSizedBox(content: null, boxHeight: 500)
